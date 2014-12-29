@@ -17,9 +17,17 @@ t3[end] #> 8
 t3[2:3] #> (6, 7)
 # t3[5] #> BoundsError
 # t3[3] = 9 #> Error: 'setindex' has no matching ...
+
+author = ("Ivo", "Balbaert", 59)
+author[2] #> "Balbaert"
+
 for i in t3
     println(i)
 end #> 5  6  7  8
 
 #tuple unpacking:
 a, b = t3 #> a is 5 and b is 6
+first_name, last_name, age = author
+# first_name has value "Ivo"
+# last_name has value "Balbaert"
+# age has value 59

@@ -31,4 +31,4 @@ function sqroot(n::Int)
 end
 sqroot(4) #> 2.0
 sqroot(0) #> 0.0
-sqroot(-6) #> ERROR: n must be non-negative
+# sqroot(-6) #> ERROR: n must be non-negative

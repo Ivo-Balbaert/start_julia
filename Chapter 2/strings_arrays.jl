@@ -27,3 +27,10 @@ show(arr) # arrays are mutable
 println("Convert back to a sentence:")
 nstr = join(arr, ' ')
 println(nstr) # The Gold and Red Loses a Bit of Its Luster
+# working with arrays:
+println("arrays: calculates the sum, mean and standard deviation ")
+arr = [1:100]
+typeof(arr) #>
+println(sum(arr)) #> 5050
+println(mean(arr)) #> 50.5
+println(std(arr)) #> 29.011491975882016

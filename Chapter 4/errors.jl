@@ -7,8 +7,9 @@ type CustomException <: Exception end
 
 # throw:
 codes = ["AO", "ZD", "SG", "EZ"]
-code = "AR"
-if in(code, codes)
+# code = "AR"
+code = "AO"
+if code in codes # in(code, codes)
     println("This is an acceptable code")
 else
     throw(DomainError())
@@ -39,6 +40,7 @@ catch ex
     backtrace()
     showerror(STDOUT, ex) #> array must be non-empty
 end
+# push!(a,1) ERROR: [] cannot grow. Instead, initialize the array with "T[]", where T is the desired element type.
 
 try
    # try this code
@@ -57,9 +59,10 @@ ret = try
 println(ret) #> 8
 
 # finally
-f = open("file1.txt") #> IOStream(<file file1.txt>)
+f = open("file1.txt", "w") #> IOStream(<file file1.txt>)
 try
     # operate on file f
+catch ex
 finally
     close(f)
 end

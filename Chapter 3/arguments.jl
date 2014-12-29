@@ -6,6 +6,7 @@ f(3) #> 8
 # f() #> ERROR: `f` has no method matching f()
 # f(1, 2, 3)
 #> ERROR: `f` has no method matching f(::Int64, ::Int64, # ::Int64)
+# f(2, b = 5) #> ERROR: function f does not accept keyword arguments
 
 # keyword arguments:
 k(x; a1 = 1, a2 = 2) = x * (a1 + a2)
@@ -29,6 +30,3 @@ end
 varargs2(k1="name1", k2="name2", k3=7)
 #> 3-element Array{Any,1} with elements:
 # (:k1,"name1") (:k2,"name2") (:k3,7)
-
-
-

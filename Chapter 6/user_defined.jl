@@ -8,7 +8,6 @@ typeof(Point) #> DataType
 
 names(Point) #> 3-element Array{Symbol,1}: :x :y :z
 
-
 orig = Point(0, 0, 0) #> Point(0.0,0.0,0.0)
 p1 = Point(2, 4, 1.3) #> Point(2.0,4.0,1.3)
 names(p1) #> 3-element Array{Symbol,1}: :x :y :z
@@ -34,11 +33,14 @@ end
 typeof(Vector3D) #> DataType
 p = Vector3D(1, 2, 3) #> Vector3D(1.0,2.0,3.0)
 # p.y = 5 #> ERROR: type Vector3D is immutable
-q = Vector3D(4.0, 3.14, 2.71)
 
+5 == 5 #> true
+5 == 5.0 #> true
 is(5, 5) #> true
-is(5, 8.0) #> false
-is(p, q) #> false
+is(5, 5.0) #> false
+q = Vector3D(4.0, 3.14, 2.71)
+r = Vector3D(4.0, 3.14, 2.71)
+is(q, r) #> false
 
 typealias Point3D Point
 p31 = Point3D(1, 2, 3) #> Point(1.0,2.0,3.0) 

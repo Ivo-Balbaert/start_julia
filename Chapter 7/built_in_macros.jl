@@ -1,9 +1,10 @@
 # Testing:
-@assert 1==42 "Shouldn't this be so?"
+# @assert 1==42 "Shouldn't this be so?"
 #> ERROR: assertion failed: Shouldn't this be so?
+
 using Base.Test
-@test 1==3 #> ERROR: test failed: 1 == 3
-@test_approx_eq 1 1.1
+# @test 1==3 #> ERROR: test failed: 1 == 3
+# @test_approx_eq 1 1.1
 #> ERROR: assertion failed: |1 - 1.1| <= 2.220446049250313e-12
 @test_approx_eq_eps 1 1.1 0.2
 
@@ -23,7 +24,7 @@ arr = [1, 2] #> 2-element Array{Int64,1}: 1 2
 tic() # start timer
 [x^2 for x in 1:1000]
 toc() # stop timer and print time: elapsed time: 0.024395069 seconds
-# toq() # stop timer and return time
+# toc() # stop timer and return time
 
 # starting a task:
 a = @async 1 + 2

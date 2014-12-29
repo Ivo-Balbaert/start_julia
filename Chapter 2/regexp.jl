@@ -1,15 +1,24 @@
-visa = r"^(?:4[0-9]{12}(?:[0-9]{3})?)$";
-input = "4457418557635128";
+email_pattern = r".+@.+"
+input = "john.doe@mit.edu"
+println(ismatch(email_pattern, input)) #> true
+
+visa = r"^(?:4[0-9]{12}(?:[0-9]{3})?)$"
+input = "4457418557635128"
 
 ismatch(visa, input)  #> true
 if ismatch(visa, input)
     println("credit card found")
     m = match(visa, input)
     println(m.match) #> 4457418557635128
-    println(m.captures) #> nothing
+    # println(m.captures) #> nothing
     println(m.offset) #> 1
     println(m.offsets) #> []
 end
+
+email_pattern = r"(.+)@(.+)"
+input = "john.doe@mit.edu"
+m = match(email_pattern, input)
+println(m.captures) #> ["john.doe","mit.edu"]
 
 m = match(r"(ju|l)(i)?(a)", "Julia")
 println(m.match) #> "lia"

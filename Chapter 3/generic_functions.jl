@@ -21,4 +21,4 @@ methodswith(String)
 # measuring execution:
 fib(n) = n < 2 ? n : fib(n-1) + fib(n-2)
 @time fib(35)
-@elapsed fib(35)
+@elapsed fib(35) #> elapsed time: 0.115853481 seconds (45144 bytes allocated)

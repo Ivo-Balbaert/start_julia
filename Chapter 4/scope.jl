@@ -1,20 +1,24 @@
 # variant 1:
 x = 9
 function funscope(n)
-  x = 0
+  x = 0 # x is in the local scope of the function
   for i = 1:n
-    local x
+    local x # x is local to the for loop
     x = i + 1
     if (x == 7)
         println("This is the local x in for: $x") #> 7
     end
- end
-  x
+  end
   println("This is the local x in funscope: $x") #> 0
   global x = 15
 end
 funscope(10)
 println("This is the global x: $x") #> 15
+#=
+This is the local x in for: 7
+This is the local x in funscope: 0
+This is the global x: 15
+=#
 
 # variant 2:
 x = 9
@@ -25,13 +29,17 @@ function funscope(n)
     if (x == 7)
         println("This is the local x in funscope: $x") #> 7
     end
- end
-  x
+  end
   println("This is the local x in funscope: $x") #> 11
   global x = 15
 end
 funscope(10)
 println("This is the global x: $x") #> 15
+#=
+This is the local x in funscope: 7
+This is the local x in funscope: 11
+This is the global x: 15
+=#
 
 # variant 3:
 x = 9
@@ -42,12 +50,16 @@ function funscope(n)
     if (x == 7)
         println("This is the local x in for: $x") #> 7
     end
- end
-  x
+  end
   println("This is the local x in funscope: $x") #> 11
 end
 funscope(10)
 println("This is the global x: $x") #> 9
+#=
+This is the local x in for: 7
+This is the local x in funscope: 11
+This is the global x: 9
+=#
 
 # without let:
 anon = cell(2)

@@ -50,10 +50,10 @@ names(df)
 #  :Col2
 #  :Col3
 eltypes(df)
-3-element Array{Type{T<:Top},1}:
- Int64
- Float64
- Bool
+# 3-element Array{Type{T<:Top},1}:
+ # Int64
+ # Float64
+ # Bool
 
 describe(df)
 # Col1
@@ -88,39 +88,39 @@ describe(df)
 
 fname = "winequality.csv"
 data = readtable(fname, separator = ';')
-1599x12 DataFrame
-| Row  | fixed_acidity | volatile_acidity | citric_acid | residual_sugar |
-|------|---------------|------------------|-------------|----------------|
-| 1    | 7.4           | 0.7              | 0.0         | 1.9            |
-| 2    | 7.8           | 0.88             | 0.0         | 2.6            |
-| 3    | 7.8           | 0.76             | 0.04        | 2.3            |
-⋮
-| 1596 | 5.9           | 0.55             | 0.1         | 2.2            |
-| 1597 | 6.3           | 0.51             | 0.13        | 2.3            |
-| 1598 | 5.9           | 0.645            | 0.12        | 2.0            |
-| 1599 | 6.0           | 0.31             | 0.47        | 3.6            |
+# 1599x12 DataFrame
+# | Row  | fixed_acidity | volatile_acidity | citric_acid | residual_sugar |
+# |------|---------------|------------------|-------------|----------------|
+# | 1    | 7.4           | 0.7              | 0.0         | 1.9            |
+# | 2    | 7.8           | 0.88             | 0.0         | 2.6            |
+# | 3    | 7.8           | 0.76             | 0.04        | 2.3            |
+# ⋮
+# | 1596 | 5.9           | 0.55             | 0.1         | 2.2            |
+# | 1597 | 6.3           | 0.51             | 0.13        | 2.3            |
+# | 1598 | 5.9           | 0.645            | 0.12        | 2.0            |
+# | 1599 | 6.0           | 0.31             | 0.47        | 3.6            |
 
-| Row  | chlorides | free_sulfur_dioxide | total_sulfur_dioxide | density |
-|------|-----------|---------------------|----------------------|---------|
-| 1    | 0.076     | 11.0                | 34.0                 | 0.9978  |
-| 2    | 0.098     | 25.0                | 67.0                 | 0.9968  |
-| 3    | 0.092     | 15.0                | 54.0                 | 0.997   |
-⋮
-| 1596 | 0.062     | 39.0                | 51.0                 | 0.99512 |
-| 1597 | 0.076     | 29.0                | 40.0                 | 0.99574 |
-| 1598 | 0.075     | 32.0                | 44.0                 | 0.99547 |
-| 1599 | 0.067     | 18.0                | 42.0                 | 0.99549 |
+# | Row  | chlorides | free_sulfur_dioxide | total_sulfur_dioxide | density |
+# |------|-----------|---------------------|----------------------|---------|
+# | 1    | 0.076     | 11.0                | 34.0                 | 0.9978  |
+# | 2    | 0.098     | 25.0                | 67.0                 | 0.9968  |
+# | 3    | 0.092     | 15.0                | 54.0                 | 0.997   |
+# ⋮
+# | 1596 | 0.062     | 39.0                | 51.0                 | 0.99512 |
+# | 1597 | 0.076     | 29.0                | 40.0                 | 0.99574 |
+# | 1598 | 0.075     | 32.0                | 44.0                 | 0.99547 |
+# | 1599 | 0.067     | 18.0                | 42.0                 | 0.99549 |
 
-| Row  | pH   | sulphates | alcohol | quality |
-|------|------|-----------|---------|---------|
-| 1    | 3.51 | 0.56      | 9.4     | 5       |
-| 2    | 3.2  | 0.68      | 9.8     | 5       |
-| 3    | 3.26 | 0.65      | 9.8     | 5       |
-⋮
-| 1596 | 3.52 | 0.76      | 11.2    | 6       |
-| 1597 | 3.42 | 0.75      | 11.0    | 6       |
-| 1598 | 3.57 | 0.71      | 10.2    | 5       |
-| 1599 | 3.39 | 0.66      | 11.0    | 6       |
+# | Row  | pH   | sulphates | alcohol | quality |
+# |------|------|-----------|---------|---------|
+# | 1    | 3.51 | 0.56      | 9.4     | 5       |
+# | 2    | 3.2  | 0.68      | 9.8     | 5       |
+# | 3    | 3.26 | 0.65      | 9.8     | 5       |
+# ⋮
+# | 1596 | 3.52 | 0.76      | 11.2    | 6       |
+# | 1597 | 3.42 | 0.75      | 11.0    | 6       |
+# | 1598 | 3.57 | 0.71      | 10.2    | 5       |
+# | 1599 | 3.39 | 0.66      | 11.0    | 6       |
 typeof(data) # DataFrame
 size(data) # (1599,12)
 data[:density]
@@ -137,16 +137,37 @@ data[:density]
 writetable("dataframe1.csv", df)
 
 # queries:
+# the quality for all wines:
+data[:quality]
 # give the wines with alcohol % = 9.5
 show(data[ data[:alcohol].== 9.5, :])
 # count the number of wines grouped by quality
 show(by(data, :quality, data -> size(data, 1)))
-6x2 DataFrame
-| Row | quality | x1  |
-|-----|---------|-----|
-| 1   | 3       | 10  |
-| 2   | 4       | 53  |
-| 3   | 5       | 681 |
-| 4   | 6       | 638 |
-| 5   | 7       | 199 |
-| 6   | 8       | 18  |
+# 6x2 DataFrame
+# | Row | quality | x1  |
+# |-----|---------|-----|
+# | 1   | 3       | 10  |
+# | 2   | 4       | 53  |
+# | 3   | 5       | 681 |
+# | 4   | 6       | 638 |
+# | 5   | 7       | 199 |
+# | 6   | 8       | 18  |
+_, count = hist(data[:quality])
+#>  count 6-element Array{Int64,1}:  10 53 681 638 199 18
+class = sort(unique(data[:quality]))
+#> 6-element DataArray{Int64,1}: 3 4 5 6 7 8
+df_quality = DataFrame(qual=class, no=count)
+# 6x2 DataFrame
+# | Row | qual | no  |
+# |-----|------|-----|
+# | 1   | 3    | 10  |
+# | 2   | 4    | 53  |
+# | 3   | 5    | 681 |
+# | 4   | 6    | 638 |
+# | 5   | 7    | 199 |
+# | 6   | 8    | 18  |
+# visualize the histogram:
+# using Gadfly
+# p = plot(df_quality, x="qual", y="no",
+#          Geom.bar(), Guide.title("Class distributions (\"quality\")"))
+# draw(PNG(14cm,10cm), p)

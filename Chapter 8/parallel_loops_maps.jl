@@ -3,12 +3,13 @@ function buffon(n)
 	hit = 0
 	for i = 1:n
 		mp = rand()
-		phi = (rand() * pi) - pi / 2
-		xright = mp + cos(phi)/2
+		phi = (rand() * pi) - pi / 2 # angle at which needle falls
+		xright = mp + cos(phi)/2  # x-location of needle
 		xleft = mp - cos(phi)/2
 		# if xright >= 1 || xleft <= 0
 		# 	hit += 1
 		# end
+		# Does needle cross either x == 0 or x == 1?
 		p = (xright >= 1 || xleft <= 0) ? 1 : 0
 		hit += p
 	end
@@ -46,6 +47,7 @@ arr = zeros(100000)
 @parallel for i=1:100000
   arr[i] = i
 end
+#> arr only contains zeros!
 
 # parallel maps:
 function rank_marray()

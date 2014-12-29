@@ -53,11 +53,12 @@ y = data[70:75, 2:4]
     fixed_acidity::Array{Float64}
     volatile_acidity::Array{Float64}
     citric_acid::Array{Float64}
-    #...
+    #...define the other columns here
     quality::Array{Float64}
 end
-wine1 = Wine(7.4, 0.7, 0, ..., 5)
-wine1 = Wine(data[1, :]...) # ... = splat-operator
+# wine1 = Wine(7.4, 0.7, 0, ..., 5)
+# wine1 = Wine(data[1, :]...) # ... = splat-operator
 
+data = z
 # writing to csv file:
-writedlm("partial.dat", z, ';')
+writedlm("partial.dat", data, ';')

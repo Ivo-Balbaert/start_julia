@@ -1,7 +1,5 @@
 Word : frequency 
 
-1960s : 1
-20th : 1
 A : 6
 Ages : 1
 All : 1

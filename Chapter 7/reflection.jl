@@ -14,9 +14,8 @@ code_lowered(+, (Int, Int))
 #    end))))
 
 code_typed(+, (Int, Int))
-1-element Array{Any,1}:
- :($(Expr(:lambda, {:x,:y}, {{},{{:x,Int64,0},{:y,Int64,0}},{}}, :(begin  # int.
-jl, line 33:
-        return box(Int64,add_int(x::Int64,y::Int64))::Int64
-    end::Int64))))
-
+# 1-element Array{Any,1}:
+#  :($(Expr(:lambda, {:x,:y}, {{},{{:x,Int64,0},{:y,Int64,0}},{}}, :(begin  # int.
+# jl, line 33:
+#         return box(Int64,add_int(x::Int64,y::Int64))::Int64
+#     end::Int64))))

@@ -4,6 +4,9 @@ for e in coll
 end
 
 for n = 1:10  println(n^3)  end
+for n = 1:10  
+    println(n^3)  
+end
 # prints:
 #1
 #8
@@ -30,7 +33,6 @@ arr = [x^2 for x in 1:10]
 #  81
 # 100
 
-
 for i = 1:length(arr)
    println("the $i-th element is $(arr[i])")
 end
@@ -46,7 +48,7 @@ end
 # the 10-th element is 100
 
 for (ix, val) in enumerate(arr)
-   println("$ix $val")
+   println("the $ix-th element is $val")
 end
 # 1 1
 # 2 4
@@ -59,6 +61,11 @@ end
 # 9 81
 # 10 100
 
+for n = 1:5
+    for m = 1:5
+        println("$n * $m = $(n * m)")
+    end
+end
 
 for n = 1:5, m = 1:5
     println("$n * $m = $(n * m)")
@@ -126,11 +133,25 @@ while a < b
     end
 end
 
+arr = rand(1:10, 10)
+println(arr)
+# get the index of search in an array arr:
+searched = 4
+for (ix, curr) in enumerate(arr)
+    if curr == searched
+        println("The searched element $searched occurs on index $ix")
+        break
+    end
+end
+#=
+[8,4,3,6,3,5,4,4,6,6]
+The searched element 4 occurs on index 2
+=#
+
 # continue:
 for n in 1:10
     if 3 <= n <= 6
         continue # skip one iteration
     end
-    println(x)
+    println(n)
 end
-

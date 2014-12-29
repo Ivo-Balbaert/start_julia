@@ -1,3 +1,5 @@
+# The following benchmarks demonstrate 
+# that devectorising code can lead to substantial speed improvement
 x = randn(10000000)
 y = randn(10000000)
 

@@ -1,3 +1,5 @@
+Pkg.add("ODBC")
+Pkg.add("Dates")
 using ODBC
 ODBC.connect("pubsODBC")
 	# ODBC Connection Object

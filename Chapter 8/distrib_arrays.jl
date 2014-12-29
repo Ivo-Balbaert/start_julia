@@ -1,3 +1,6 @@
+# before running this code:
+# start a Julia REPL with: julia -p N with N > 4 
+# Otherwise you get a BoundsError in the call workers()[1:4]
 arr = drand((100,100), workers()[1:4], [1,4])
 # 100x100 DArray{Float64,2,Array{Float64,2}}:
 #  0.815847   0.354301   0.212216   …  0.649562   0.0508848  0.803529

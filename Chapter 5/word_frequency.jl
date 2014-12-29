@@ -1,9 +1,9 @@
 # 1- read in text file:
 str = readall("words1.txt")
 # println(str) #> to be or not to be that is the question
-# 2- replace non alfabet characters and digits from text with space:
-nonalfa = r"(\W\s?)"
-str = replace(str, nonalfa, ' ')
+# 2- replace non alphabet characters and digits from text with a space:
+nonalpha = r"(\W\s?)"
+str = replace(str, nonalpha, ' ')
 digits = r"(\d+)"
 str = replace(str, digits, ' ')
 #> "to be or not to be that is the question "
@@ -14,9 +14,11 @@ word_list = split(str, ' ')
 # 4- make a dictionary with the words and count their frequencies:
 word_freq = Dict{String, Int64}()
 for word in word_list
-    strip(word)
+    word = strip(word)
     if isempty(word) continue end
-    haskey(word_freq, word) ? word_freq[word] += 1 : word_freq[word] = 1
+    haskey(word_freq, word) ? 
+    	word_freq[word] += 1 : 
+    	word_freq[word] = 1
 end
 # 5- sort the words (the keys) and print out the frequencies:
 println("Word : frequency \n")
