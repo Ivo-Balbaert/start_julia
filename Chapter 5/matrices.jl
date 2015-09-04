@@ -1,10 +1,14 @@
 [1, 2, 3]
-[1 2 3]
+# which is the same as:
 [1; 2; 3]
 # 3-element Array{Int64,1}:
 #  1
 #  2
 #  3
+
+[1 2 3]
+# 1x3 Array{Int64,2}:
+#  1  2  3
 
 Array{Int64, 1} == Vector{Int64} #> true
 Array{Int64, 2} == Matrix{Int64} #> true
@@ -135,13 +139,6 @@ c = [a; b]
 #  5  6
 #  7  8
 
-c = [a, b]
-# 4x2 Array{Int64,2}:
-#  1  2
-#  3  4
-#  5  6
-#  7  8
-
 reshape(1:12, 3, 4)
 # 3x4 Array{Int64,2}:
 #  1  4  7  10
@@ -188,4 +185,4 @@ c #> 2-element Array{Any,1}: [1.0,1.0] Bool[true,true,true]
 is(c, x) #> false
 
 arr = Int64[]
-sizehint(arr, 75) # becomes sizehint!(arr, 75) from v0.4 onwards
+sizehint!(arr, 75) # becomes sizehint!(arr, 75) from v0.4 onwards

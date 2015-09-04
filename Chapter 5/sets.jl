@@ -19,12 +19,14 @@ push!(s1, 32) #> Set{Any}({25,32,11})
 in(32, s1) #> true
 in(100, s1) #> false
 
-x = Set([1:100])
+# x = Set([1:100])
+x = Set(collect(1:100))
 @time 2 in x # elapsed time 4.888e-6 seconds
-x2 = Set([1:1000000])
+# x2 = Set([1:1000000])
+x2 = Set(collect(1:1000000))
 @time 2 in x2 # elapsed time 5.378e-6 seconds
 
-st = Set{(Int, Int)}()
+st = Set{(Int, Int)}() # RROR: LoadError: TypeError: apply_type: in Set, expected Type{T}, got Tuple{DataType,DataType}
 push!(st, (1,2))
 #> Set{(Int64,Int64)}({(1,2)})
 # st2 = Set({(1, 2), (5, 6)}) #> Set{Any}({(1,2),(5,6)})

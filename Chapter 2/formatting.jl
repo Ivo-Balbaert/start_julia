@@ -19,4 +19,11 @@ println()
 # right justify:
 @printf("%50s\n", "text right justified!")
 # p for pointers:
-@printf("a pointer: %p\n", 1e10) #> a pointer: 0x00000002540be400
+# @printf("a pointer: %p\n", 1e10) #> a pointer: 0x00000002540be400
+# a pointer: 0xWARNING: unsigned(x::AbstractFloat) is deprecated, use round(UInt,x) instead.
+#  in depwarn at deprecated.jl:73
+#  in unsigned at deprecated.jl:50
+#  in include at boot.jl:259
+#  in include_from_node1 at loading.jl:271
+#  in process_options at client.jl:308
+#  in _start at client.jl:411
