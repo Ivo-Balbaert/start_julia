@@ -12,19 +12,26 @@ run(`date`) #> Sun Oct 12 09:44:50 GMT 2014
 cmd = `cat file1.txt`
 run(cmd) #> text from file1.txt: This a a test for try / catch / finally
 success(cmd) #> true
+println("")
 
 # interpolation:
 file = "file1.txt"
 cmd = `cat $file`
 run(cmd) #> text from file1.txt: This a a test for try / catch / finally
+println("")
 # cmd = `ls *.*`   # works only on Windows! not in general
 # https://groups.google.com/forum/#!topic/julia-users/hzBeluKU7P0
 # run(cmd) #> returns: file1.txt  shell.jl  test.txt
 # pipelining:
-run(`cat $file` |> "test.txt") #> text from file1.txt is written into test.txt
-run("test.txt" |> `cat`)
-run(`echo $("\nhi\nJulia")` |> `cat` |> `grep -n J`) #> 3:Julia
-run(`cat "tosort.txt"` |> `sort`) # returns A B C
+# v0.3: deprecated: run(`cat $file` |> "test.txt") #> text from file1.txt is written into test.txt
+run(pipeline(`cat $file`, "test.txt")) #> text from file1.txt is written into test.txt
+# deprecated: run("test.txt" |> `cat`)
+run(pipeline("test.txt", `cat`))
+println("")
+# run(`echo $("\nhi\nJulia")` |> `cat` |> `grep -n J`) #> 3:Julia
+run(pipeline(`echo $("\nhi\nJulia")`,`cat`,`grep -n J`))
+# run(`cat "tosort.txt"` |> `sort`) # returns A B C
+run(pipeline(`cat "tosort.txt"`, `sort`))
 
 println()
 println("Output grep command:")
@@ -50,7 +57,8 @@ test.txt:This a a test for try / catch / finally
 println()
 
 # reading the output of the command:
-a = readall(`cat "tosort.txt"` |> `sort`)
+#v0.3:  a = readall(`cat "tosort.txt"` |> `sort`)
+a = readall(pipeline(`cat "tosort.txt"`,`sort`))
 #> a has value "A\r\nB\r\nC\n"
 
 run(`cat "file1.txt"` & `cat "tosort.txt"`)
@@ -62,3 +70,4 @@ run(`cat "file1.txt"` & `cat "tosort.txt"`)
 fun1 = ()
 fun2 = ()
 @windows ? fun1 : fun2
+println("")

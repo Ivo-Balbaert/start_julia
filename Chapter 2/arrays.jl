@@ -22,16 +22,17 @@ println(size(arr)) #> (3,)
 
 arr2 = Array(Int64,5)
 show(arr2) #> [0,0,0,0,0]
-sizehint(arr2, 10^5)
+sizehint!(arr2, 10^5)
 
 arr3 = Float64[] #> 0-element Array{Float64,1}
 push!(arr3, 1.0) #> 1-element Array{Float64,1}
-arr4 = [1:7] #> 7-element Array{Int64,1}: [1,2,3,4,5,6,7]
+# deprecated: arr4 = [1:7] #> 7-element Array{Int64,1}: [1,2,3,4,5,6,7]
+arr4 = collect(1:7) 
 join(arr4, ", ") #> "1, 2, 3, 4, 5, 6, 7"
 arr4[1:3] # => [1, 2, 3]
 arr4[2:end] # => [2, 3, 4, 5, 6, 7]  , b[2:] is deprecated
 
-b = [1:7]
+b = collect(1:7)
 c = [100,200,300]
 append!(b,c) # Now b is [1, 2, 3, 4, 5, 6, 7, 100, 200, 300]
 pop!(b) #> 300, b is now [1, 2, 3, 4, 5, 6, 7, 100, 200]
@@ -77,7 +78,8 @@ println(cell(4)) #> {#undef,#undef,#undef,#undef}
 
 v1 = rand(Int32, 5)
 println(v1) #> Int32[1735276173,972339632,1303377282,1493859467,-788555652]
-int64(v1) #> converts elements to 64 bit integers
+# deprecated: int64(v1) #> converts elements to 64 bit integers
+round(Int64,v1) #> converts elements to 64 bit integers
 
 a = [1,2,4,6]
 a1 = a

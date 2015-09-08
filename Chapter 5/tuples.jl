@@ -9,7 +9,7 @@ t2 = (1, 2, 3)
 typeof(t2) #> (Int64,Int64,Int64)
 () #> empty tuple
 (1,) #> one element tuple
-('z', 3.14)::(Char, Float64)
+('z', 3.14)
 
 t3 = (5, 6, 7, 8)
 t3[1] #> 5

@@ -30,7 +30,7 @@ function process(item)
 end
 
 # files:
-names(IOStream)
+fieldnames(IOStream)
 # 4-element Array{Symbol,1}:
 #  :handle
 #  :ios

@@ -13,6 +13,7 @@ show(df)
 # | 2   | 2    | 3.14159 | false |
 # | 3   | 3    | 1.41421 | true  |
 # | 4   | 4    | 42.0    | false |
+println("")
 
 df = DataFrame(Col1 = 1:4, Col2 = [e, pi, sqrt(2), 42], Col3 = [true, false, true, false])
 
@@ -167,7 +168,9 @@ df_quality = DataFrame(qual=class, no=count)
 # | 5   | 7    | 199 |
 # | 6   | 8    | 18  |
 # visualize the histogram:
-# using Gadfly
-# p = plot(df_quality, x="qual", y="no",
-#          Geom.bar(), Guide.title("Class distributions (\"quality\")"))
-# draw(PNG(14cm,10cm), p)
+using Gadfly
+p = plot(df_quality, x="qual", y="no",
+          Geom.bar(), Guide.title("Class distributions (\"quality\")"))
+draw(PNG(14cm,10cm), p)
+# Output of draw command?
+# Compose.Image{Compose.PNGBackend}(IOBuffer(data=UInt8[...], readable=true, writable=true, seekable=true, append=false, size=21319, maxsize=Inf, ptr=21320, mark=-1),Cairo.CairoSurface(Ptr{Void} @0x0000000000000000,529.0,378.0,#undef),Cairo.CairoContext(Ptr{Void} @0x0000000000000000,Cairo.CairoSurface(Ptr{Void} @0x0000000000000000,529.0,378.0,#undef),Ptr{Void} @0x0000000020985000),529.1338582677166,377.9527559055118,RGBA{Float64}(0.0,0.0,0.0,0.0),RGBA{Float64}(0.0,0.0,0.0,1.0),Float64[],Compose.LineCapButt(),Compose.LineJoinMiter(),true,Compose.ImagePropertyState[],Compose.ImagePropertyFrame[],Dict{Type{T},Union{Compose.Property{P<:Compose.PropertyPrimitive},Void}}(),true,false,nothing,true,true,3.7795275590551185,nothing,nothing)[Finished in 49.6s]

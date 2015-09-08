@@ -10,4 +10,4 @@ dv[5] = NA  #> dv now becomes [7, 3, NA, 5, NA]
 # getting rid of NA's:
 sum(dropna(dv)) #> 15
 repl = -1
-sum(array(dv, repl)) #> 13
+sum(convert(Array, dv, repl)) #> 13

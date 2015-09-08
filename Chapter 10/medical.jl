@@ -84,7 +84,7 @@ describe(df)
 # NA%      0.0%
 
 # And the standard deviations
-["Age" std(df["Age"]) "sBP" std(df["sBP"]) "dBP" std(df["dBP"]) "BMI" std(df["BMI"])]
+["Age" std(df[:Age]) "sBP" std(df[:sBP]) "dBP" std(df[:dBP]) "BMI" std(df[:BMI])]
 # 1x8 Array{Any,2}:
 #  "Age"  8.1941  "sBP"  22.6628  "dBP"  12.5921  "BMI"  4.41216
 

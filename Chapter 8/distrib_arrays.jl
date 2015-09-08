@@ -1,6 +1,8 @@
 # before running this code:
 # start a Julia REPL with: julia -p N with N > 4 
 # Otherwise you get a BoundsError in the call workers()[1:4]
+@everywhere using DistributedArrays
+
 arr = drand((100,100), workers()[1:4], [1,4])
 # 100x100 DArray{Float64,2,Array{Float64,2}}:
 #  0.815847   0.354301   0.212216   …  0.649562   0.0508848  0.803529
@@ -26,7 +28,7 @@ arr = drand((100,100), workers()[1:4], [1,4])
 #  0.539012   0.453164   0.0306549     0.926738   0.326411   0.284542
 
 arr.dims # (100, 100)
-arr.pmap # on which workers ? 4-element Array{Int64,1}: 2 3 4 5
+arr.pids # on which workers ? 4-element Array{Int64,1}: 2 3 4 5
 arr.indexes # data division:
 # 1x4 Array{(UnitRange{Int64},UnitRange{Int64}),2}:
 #  (1:100,1:25)  (1:100,26:50)  (1:100,51:75)  (1:100,76:100)
@@ -34,11 +36,12 @@ arr.cuts # data division:
 # 2-element Array{Array{Int64,1},1}:
 #  [1,101]
 #  [1,26,51,76,101]
-arr.chunks # references on the workers:
+# arr.chunks # references on the workers:
 # 1x4 Array{RemoteRef,2}:
 #  RemoteRef(2,1,11164)  RemoteRef(3,1,11165)  …  RemoteRef(5,1,11167)
 
-da = @parallel [2i for i = 1:10]
+# ERROR: LoadError: malformed @parallel loop
+# da = @parallel [2i for i = 1:10]
 # 10-element DArray{Int64,1,Array{Int64,1}}:
 #   2
 #   4

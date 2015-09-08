@@ -3,7 +3,7 @@ type Person
     height::Float64
 end
 
-names(Person) #> 2-element Array{Symbol,1}: :name  :height
+fieldnames(Person) #> 2-element Array{Symbol,1}: :name  :height
 Person.types  #> (String,Float64)
 
 code_lowered(+, (Int, Int))

@@ -70,7 +70,7 @@ fetch(r3) #> 2.23606797749979
 	else return fib(n-1) + fib(n-2)
 	end
 end
-require("functions")
+include("functions.jl")
 
 # broadcast data to all workers:
 d = "Julia"

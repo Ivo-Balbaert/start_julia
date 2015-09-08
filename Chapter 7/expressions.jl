@@ -23,7 +23,7 @@ end
 # end
 
 e1 = :(2 + 3)
-names(e1)
+fieldnames(e1)
 #3-element Array{Symbol,1}:
 # :head
 # :args

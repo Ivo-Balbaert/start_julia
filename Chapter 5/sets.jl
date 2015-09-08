@@ -26,7 +26,8 @@ x = Set(collect(1:100))
 x2 = Set(collect(1:1000000))
 @time 2 in x2 # elapsed time 5.378e-6 seconds
 
-st = Set{(Int, Int)}() # RROR: LoadError: TypeError: apply_type: in Set, expected Type{T}, got Tuple{DataType,DataType}
+# st = Set{(Int, Int)}() # ERROR: LoadError: TypeError: apply_type: in Set, expected Type{T}, got Tuple{DataType,DataType}
+st = Set()
 push!(st, (1,2))
 #> Set{(Int64,Int64)}({(1,2)})
 # st2 = Set({(1, 2), (5, 6)}) #> Set{Any}({(1,2),(5,6)})
