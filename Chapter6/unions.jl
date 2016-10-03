@@ -29,7 +29,7 @@ v = Vector2D(3, 2) #> Vector2D(3.0,2.0)
 *(p::Point,    v::Vector2D) = p.x * v.x + p.y * v.y
 *(p, v) #> 16.0
 
-VecOrPoint = Union(Vector2D, Point)
+VecOrPoint = Union{Vector2D, Point}
 
 isa(p, VecOrPoint) #> true
 isa(v, VecOrPoint) #> true

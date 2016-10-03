@@ -66,7 +66,7 @@ d = 5
 afun(d) #> 11
 
 # recursive:
-sum(n) =  n > 1 ? sum(n-1) + n : n
-sum(100) #> 5050
+sum(n) =  n < 1 ? n : n + sum(n-1)
+println(sum(100)) #> 5050
 fib(n) = n < 2 ? n : fib(n-1) + fib(n-2)
 println(fib(25)) #> 75025

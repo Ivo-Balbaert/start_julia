@@ -2,7 +2,7 @@ for i in 1:2:9
      println(i)
 end #> 1 3 5 7 9
 
-search("Julia","uli") #> 2:4
+search("Julia", "uli") #> 2:4
 typeof(1:1000) #> UnitRange{Int64}
 
 a = split("A,B,C,D",",")
@@ -17,7 +17,7 @@ arr[end] #> 37
 println(eltype(arr)) #> Int64
 println(length(arr)) #> 3
 println(ndims(arr)) #> 1
-println(size(arr,1)) #> 3
+println(size(arr, 1)) #> 3
 println(size(arr)) #> (3,)
 
 arr2 = Array(Int64,5)
@@ -33,7 +33,7 @@ arr4[1:3] # => [1, 2, 3]
 arr4[2:end] # => [2, 3, 4, 5, 6, 7]  , b[2:] is deprecated
 
 b = collect(1:7)
-c = [100,200,300]
+c = [100, 200, 300]
 append!(b,c) # Now b is [1, 2, 3, 4, 5, 6, 7, 100, 200, 300]
 pop!(b) #> 300, b is now [1, 2, 3, 4, 5, 6, 7, 100, 200]
 push!(b, 42) # b is now [1, 2, 3, 4, 5, 6, 7, 100, 200, 42]
@@ -71,14 +71,13 @@ ones(4)
 ones(3, 2)
 eqa = linspace(0, 10, 5)
 println()
-show(eqa) #> [0.0,2.5,5.0,7.5,10.0]
+show(eqa) #> linspace(0.0,10.0,5) - [0.0,2.5,5.0,7.5,10.0]
 fill!(arr, 42) #> [42,42,42]
 println()
-println(cell(4)) #> {#undef,#undef,#undef,#undef}
+println(cell(4)) #> Any[#undef,#undef,#undef,#undef]
 
 v1 = rand(Int32, 5)
 println(v1) #> Int32[1735276173,972339632,1303377282,1493859467,-788555652]
-# deprecated: int64(v1) #> converts elements to 64 bit integers
 round(Int64,v1) #> converts elements to 64 bit integers
 
 a = [1,2,4,6]

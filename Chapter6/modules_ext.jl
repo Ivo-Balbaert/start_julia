@@ -1,4 +1,5 @@
 module LibA
+	a = 42
 end
 
 module LibB

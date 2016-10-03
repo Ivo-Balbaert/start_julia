@@ -5,7 +5,7 @@ function funscope(n)
   for i = 1:n
     local x # x is local to the for loop
     x = i + 1
-    if (x == 7)
+    if x == 7
         println("This is the local x in for: $x") #> 7
     end
   end
@@ -26,7 +26,7 @@ function funscope(n)
   x = 0
   for i = 1:n
     x = i + 1
-    if (x == 7)
+    if x == 7
         println("This is the local x in funscope: $x") #> 7
     end
   end

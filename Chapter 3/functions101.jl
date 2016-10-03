@@ -49,11 +49,11 @@ function mult(x::Float64, y::Float64)
 end
 # following gives error:
 # mult(5, 6)
-# ERROR: `mult` has no method matching mult(::Int64, ::Int64)
+# ERROR:  MethodError: `mult` has no method matching mult(::Int64, ::Int64)
 
 # one-line assignment syntax:
 mult(x, y) = x * y
-f(x, y) = x^3 - y + x*y
+f(x, y) = x^3 - y + x * y
 println(f(3,2) ) # 31
 
 ∑(x,y) = x + y

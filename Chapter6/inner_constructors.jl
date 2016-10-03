@@ -1,9 +1,9 @@
 type Person
-    firstname::String
-    lastname::String
+    firstname::AbstractString
+    lastname::AbstractString
     sex::Char
     age::Float64
-    children::Array{String, 1}
+    children::Array{AbstractString, 1}
 end
 
 p1 = Person("Alan", "Bates", 'M', 45.5, ["Jeff", "Stephan"])
@@ -22,11 +22,11 @@ fullname(p::Person) = string(p.firstname, " ", p.lastname)
 print(fullname(p1)) #> Alan Bates
 
 type Family
-     name::String
-     members::Array{String, 1}
+     name::AbstractString
+     members::Array{AbstractString, 1}
      big::Bool
-     Family(name::String) = new(name, String[], false)
-     Family(name::String, members) = new(name, members, length(members) > 4)
+     Family(name::AbstractString) = new(name, AbstractString[], false)
+     Family(name::AbstractString, members) = new(name, members, length(members) > 4)
 end
 
 fam = Family("Bates-Smith", ["Alan", "Julia", "Jeff", "Stephan", "Viral"])

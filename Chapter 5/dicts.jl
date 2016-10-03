@@ -74,10 +74,10 @@ end
 
 dpairs = ["a", 1, "b", 2, "c", 3]
 d6 = [dpairs[i]=>dpairs[i+1] for i in 1:2:length(dpairs)]
-d6 = (String => Int64)[dpairs[i]=>dpairs[i+1] for i in 1:2:length(dpairs)]
+d6 = (AbstractString => Int64)[dpairs[i]=>dpairs[i+1] for i in 1:2:length(dpairs)]
 
 # capitals = (String => String)["France"=> "Paris", "China"=>"Beijing"]
-capitals = Dict{String, String}("France"=> "Paris", "China"=>"Beijing") # from v0.4 onwards
+capitals = Dict{AbstractString, AbstractString}("France"=> "Paris", "China"=>"Beijing") # from v0.4 onwards
 
 # use of a dictionary:
 function showfactor(n)

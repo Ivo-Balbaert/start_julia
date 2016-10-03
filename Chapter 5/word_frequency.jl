@@ -12,7 +12,7 @@ word_list = split(str, ' ')
 # println(word_list)
 #> "to" "be" "or" "not" "to" "be" "that" "is" "the" "question" ""
 # 4- make a dictionary with the words and count their frequencies:
-word_freq = Dict{String, Int64}()
+word_freq = Dict{AbstractString, Int64}()
 for word in word_list
     word = strip(word)
     if isempty(word) continue end

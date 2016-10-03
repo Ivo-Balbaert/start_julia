@@ -1,4 +1,4 @@
-coll = [1:50]
+coll = 1:50
 for e in coll
    # process(e) executed for every element e in coll
 end

@@ -1,4 +1,4 @@
-require("temperature_converter.jl")
+include("temperature_converter.jl")
 
 using TemperatureConverter
 

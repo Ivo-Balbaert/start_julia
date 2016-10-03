@@ -24,7 +24,7 @@ subtypes(Signed) #> 5-element Array{Any,1}:
 # Int64
 # Int8
 subtypes(Int64) #> 0-element Array{Any,1}
-typeof(None) #> UnionType
+typeof(Union{}) #> UnionType
 
 Bool <: Integer #> true
 Bool <: Any #> true

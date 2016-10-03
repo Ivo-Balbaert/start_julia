@@ -16,7 +16,7 @@ f(1.5, 2) #> "n is a float and m is an integer"
 # methods:
 methods(+)
 methods(sort)
-methodswith(String)
+methodswith(AbstractString)
 
 # measuring execution:
 fib(n) = n < 2 ? n : fib(n-1) + fib(n-2)
