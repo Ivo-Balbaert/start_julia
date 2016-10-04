@@ -4,8 +4,6 @@ start_time = time()
 time_elapsed = time() - start_time
 println("Time elapsed: $time_elapsed") #> 0.0010001659393310547
 
-strftime(time())
-
 d = Date(2014,9,1) #> 2014-09-01
 dt = DateTime(2014,9,1,12,30,59,1) #> 2014-09-01T12:30:59.001
 # accessors:

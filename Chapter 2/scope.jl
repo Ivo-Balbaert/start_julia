@@ -1,7 +1,10 @@
 # type annotations and scope:
 x = 1.0 # x is Float64
 x = 1 # now x is Int
-# y::Float64 = 1.0 # LoadError: "y is not defined"
+# y::Float64 = 1.0
+# WARNING: deprecated syntax "global y::Float64".
+# Use "typeassert" instead.
+# UndefVarError: "y is not defined"
 
 function scopetst()
     y::Float64 = 1.0 # y must be Float64, not possible in global scope

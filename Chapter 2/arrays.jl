@@ -6,8 +6,8 @@ search("Julia", "uli") #> 2:4
 typeof(1:1000) #> UnitRange{Int64}
 
 a = split("A,B,C,D",",")
-typeof(a) #> Array{SubString{ASCIIString},1}
-show(a) #> SubString{ASCIIString}["A","B","C","D"]
+typeof(a) #> Array{SubString{String},1}
+show(a) #> SubString{String}["A","B","C","D"]
 
 arr = [100, 25, 37]
 arra = Any[100, 25, "ABC"] #> element type Any
@@ -21,16 +21,15 @@ println(size(arr, 1)) #> 3
 println(size(arr)) #> (3,)
 
 arr2 = Array(Int64,5)
-show(arr2) #> [0,0,0,0,0]
+show(arr2) #> for example: [2227194080,2148159536,2147418416,2147418608,2227194144]
 sizehint!(arr2, 10^5)
 
 arr3 = Float64[] #> 0-element Array{Float64,1}
 push!(arr3, 1.0) #> 1-element Array{Float64,1}
-# deprecated: arr4 = [1:7] #> 7-element Array{Int64,1}: [1,2,3,4,5,6,7]
-arr4 = collect(1:7) 
+arr4 = collect(1:7) #> 7-element Array{Int64,1}: [1,2,3,4,5,6,7]
 join(arr4, ", ") #> "1, 2, 3, 4, 5, 6, 7"
 arr4[1:3] # => [1, 2, 3]
-arr4[2:end] # => [2, 3, 4, 5, 6, 7]  , b[2:] is deprecated
+arr4[2:end] # => [2, 3, 4, 5, 6, 7]
 
 b = collect(1:7)
 c = [100, 200, 300]
@@ -49,6 +48,7 @@ println(b) #> [42,2,3,4,5,6,7,200,42]
 sort!(b) #> b is now changed to [2,3,4,5,6,7,42,42,200]
 println(b) #> [2,3,4,5,6,7,42,42,200]
 println()
+
 arr = [1, 5, 3]
 # looping
 for e in arr
@@ -99,6 +99,5 @@ println(a) #>[ 1, 25, 3]
 # the splat operator:
 arr = ['a', 'b', 'c']
 show(join(arr)) #> "abc"
-show(utf32(arr)) #> "abc"
-show(string(arr)) #> "['a', 'b', 'c']" 
+show(string(arr)) #> "['a', 'b', 'c']"
 show(string(arr...)) #> "abc"
