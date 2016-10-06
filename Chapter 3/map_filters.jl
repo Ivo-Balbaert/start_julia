@@ -25,7 +25,6 @@ filter( n -> n % 2 == 0, 1:10) #> [2, 4, 6, 8, 10]
 
 # comprehensions:
 arr0 = [n for n in 1:1000] #> [1,2,...,1000]
-# better write it as arr0 = [1:1000]
 arr = Float64[x^2 for x in 1:4] #> [1.0,4.0,9.0,16.0]
 cubes = [x^3 for x in 1:5] #> [1, 8, 27, 64, 125]
 table10 = [x*y for x=1:10, y=1:10] #>
@@ -46,7 +45,7 @@ mat1 = [x + y for x in 1:2, y in 1:3]
 #> 3  4  5
 
 arrany = Any[i * 2 for i in 1:5] #> [2,4,6,8,10]
-[ sqrt(exp(i))-j for i = 1:8, j = 1:8] 
+[ sqrt(exp(i))-j for i = 1:8, j = 1:8]
 # 8x8 Array{Float64,2}:
 #   0.648721  -0.351279  -1.35128   …  -4.35128  -5.35128   -6.35128
 #   1.71828    0.718282  -0.281718     -3.28172  -4.28172   -5.28172

@@ -1,5 +1,5 @@
 mult(x, y) = x * y
-typeof(mult) #> Function
+typeof(mult) #> #mult
 m = mult
 m(6, 6) #> 36
 
@@ -50,7 +50,7 @@ function add(x)
     end
 end
 add(1)(2) #> 3
-add(x) = f(y) = x + y 
+add(x) = f(y) = x + y
 add(x) = y -> x + y
 
 # nested:

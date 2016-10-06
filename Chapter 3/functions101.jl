@@ -1,4 +1,4 @@
-# n = mult(3, 4) #> ErrorException("mult not defined"))
+# n = mult(3, 4) #> UndefVarError "mult not defined"
 function mult(x, y)
     println("x is $x and y is $y")
     x * y
@@ -8,8 +8,8 @@ n = mult(3, 4) #> 12
 
 function mult(x, y)
     println("x is $x and y is $y")
-    if x == 1 
-        return y 
+    if x == 1
+        return y
     end
     x * y
 end
@@ -17,7 +17,7 @@ end
 function multi(n, m)
     n * m, div(n, m), n % m
 end
-x, y, z = multi(8, 2)  #> (16,4,0) 
+x, y, z = multi(8, 2)  #> (16,4,0)
 
 # variable number of arguments:
 function varargs(n, m, args...)
@@ -27,7 +27,7 @@ varargs(1, 2, 3, 4) # n is 1, m is 2, and args has value (3, 4)
 
 function varargs2(args...)
     println("arguments2: $args")
-end 
+end
 
 x = (3, 4)
 varargs2(1, 2, x...) # args is (1,2,3,4)
