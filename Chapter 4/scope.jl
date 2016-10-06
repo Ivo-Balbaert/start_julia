@@ -62,7 +62,7 @@ This is the global x: 9
 =#
 
 # without let:
-anon = cell(2)
+anon = Array{Any}(2)
 for i = 1:2
   anon[i] = ()-> println(i)
   i += 1
