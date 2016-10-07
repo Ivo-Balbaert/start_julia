@@ -13,16 +13,16 @@
 Array{Int64, 1} == Vector{Int64} #> true
 Array{Int64, 2} == Matrix{Int64} #> true
 
-[1 2] * [3 ; 4] #> 11
-
 matrix1 = [1 2; 3 4]
 matrix1[2, 1] #> 3
 matrix2 = [5 6; 7 8]
-println(matrix1 * matrix2) 
+println(matrix1 * matrix2)
 #=
 [19 22
  43 50]
 =#
+
+[1 2] * [3 ; 4] #> 11
 
 ma1 = rand(3, 5)
 ndims(ma1) #> 2
@@ -33,7 +33,7 @@ size(ma1,2) #> 5
 length(ma1) #> 15
 
 idm = eye(3)
-idm[1:end, 2] #> 2nd column
+idm[1:end, 2] #> 2nd column, same as: idm[:, 2]
 idm[2, :] #> 2nd row
 idmc = idm[2:end, 2:end]
 #2x2 Array{Float64,2}:
@@ -62,7 +62,7 @@ jarr #>
 # [1,2,3,4]
 # [1,2,3]
 # it is better to use fill than push! performance
-# (push is inefficient because the outermost matrix must sometimes grow to accommodate 
+# (push is inefficient because the outermost matrix must sometimes grow to accommodate
 # new elements)
 jarr = fill(Array(Int64,1),3)
 jarr[1]=[1,2]
@@ -79,7 +79,7 @@ ma[:]
 ma' #> [1 3; 2 4]
 ma * ma' #>
 #5    11
-#11  25
+#11   25
 ma .* ma' #> 2x2 Array{Int64,2}:
 #1   6
 #6  16
@@ -167,7 +167,7 @@ reshape(a, (9,1))
 # ERROR: DimensionMismatch("new dimensions (2,2) must be consistent with array size 9")
 
 # copy and deepcopy:
-x = cell(2) #> 2-element Array{Any,1}: #undef #undef
+x = Array{Any}(2) #> 2-element Array{Any,1}: #undef #undef
 x[1] = ones(2) #> 2-element Array{Float64} 1.0 1.0
 x[2] = trues(3) #> 3-element BitArray{1}: true true true
 x #> 2-element Array{Any,1}: [1.0,1.0] Bool[true,true,true]

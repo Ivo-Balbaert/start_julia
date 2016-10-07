@@ -4,9 +4,9 @@ b #> 22.0
 c #> "World"
 d #> 'x'
 t1 = (1,22.0,"World",'x')
-typeof(t1) #> (Int64,Float64,ASCIIString,Char)
+typeof(t1) #> Tuple{Int64,Float64,String,Char}
 t2 = (1, 2, 3)
-typeof(t2) #> (Int64,Int64,Int64)
+typeof(t2) #> Tuple{Int64,Int64,Int64}
 () #> empty tuple
 (1,) #> one element tuple
 ('z', 3.14)
@@ -18,7 +18,7 @@ t3[2:3] #> (6, 7)
 # t3[5] #> BoundsError
 # t3[3] = 9 #> Error: 'setindex' has no matching ...
 
-author = ("Ivo", "Balbaert", 59)
+author = ("Ivo", "Balbaert", 60)
 author[2] #> "Balbaert"
 
 for i in t3
