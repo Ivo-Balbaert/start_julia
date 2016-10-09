@@ -6,11 +6,11 @@ end
 
 typeof(Point) #> DataType
 
-names(Point) #> 3-element Array{Symbol,1}: :x :y :z
+fieldnames(Point) #> 3-element Array{Symbol,1}: :x :y :z
 
 orig = Point(0, 0, 0) #> Point(0.0,0.0,0.0)
 p1 = Point(2, 4, 1.3) #> Point(2.0,4.0,1.3)
-names(p1) #> 3-element Array{Symbol,1}: :x :y :z
+fieldnames(p1) #> 3-element Array{Symbol,1}: :x :y :z
 
 methods(Point)
 # 2 methods for generic function "Point":
@@ -43,7 +43,7 @@ r = Vector3D(4.0, 3.14, 2.71)
 is(q, r) #> false
 
 typealias Point3D Point
-p31 = Point3D(1, 2, 3) #> Point(1.0,2.0,3.0) 
+p31 = Point3D(1, 2, 3) #> Point(1.0,2.0,3.0)
 
 # constructors, subtyping and multiple dispatch
 abstract Employee

@@ -11,10 +11,9 @@ super(Real) #> Number
 super(Number) #> Any
 super(Any) #> Any
 
-subtypes(Integer) #> 5-element Array{Any,1}:
+subtypes(Integer) #> 4-element Array{Any,1}:
 # BigInt
 # Bool
-# Char
 # Signed
 # Unsigned
 subtypes(Signed) #> 5-element Array{Any,1}:

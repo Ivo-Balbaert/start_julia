@@ -1,3 +1,6 @@
+# functions must be explicitly imported to be extended
+import Base.+, Base.*
+
 type Point
     x::Float64
     y::Float64

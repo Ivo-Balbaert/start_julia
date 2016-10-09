@@ -1,5 +1,4 @@
 include("temperature_converter.jl")
-
 using TemperatureConverter
 
 println("$(as_celsius(100, :Celsius))") #> 100
