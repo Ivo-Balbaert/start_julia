@@ -1,8 +1,8 @@
-e1 = Expr(:call, *, 3, 4) #> :((*)(3,4))
+e1 = Expr(:call, *, 3, 4) #  :((*)(3,4))
 eval(e1) #> 12
 
-# e1 = expr(:call, *, 3, a) #> ERROR: a not defined
-e2 = Expr(:call, *, 3, :a) #> :((*)(3,a))
+# e1 = expr(:call, *, 3, a) #ERROR: a not defined
+e2 = Expr(:call, *, 3, :a) # :((*)(3,a))
 # eval(e2) #> ERROR: a not defined
 a = 4 #> 4
 eval(e2) #> 12

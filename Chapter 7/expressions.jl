@@ -74,5 +74,5 @@ dump(:(2 + a * b - c))
 #     3: Symbol c
 #   typ: Any
 
-symbol('\'') #> :'
-symbol("'") #> :'
+Symbol('\'') #> :'
+Symbol("'") #> :'
