@@ -4,12 +4,12 @@ typeof(Complex{Int64}) #> DataType
 typeof(Any) #> DataType
 typeof(DataType) #> DataType
 
-super(Int64) #> Signed
-super(Signed) #> Integer
-super(Integer) #> Real
-super(Real) #> Number
-super(Number) #> Any
-super(Any) #> Any
+supertype(Int64) #> Signed
+supertype(Signed) #> Integer
+supertype(Integer) #> Real
+supertype(Real) #> Number
+supertype(Number) #> Any
+supertype(Any) #> Any
 
 subtypes(Integer) #> 4-element Array{Any,1}:
 # BigInt
