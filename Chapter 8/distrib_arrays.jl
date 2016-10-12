@@ -1,5 +1,5 @@
 # before running this code:
-# start a Julia REPL with: julia -p N with N > 4 
+# start a Julia REPL with: julia -p N with N > 4
 # Otherwise you get a BoundsError in the call workers()[1:4]
 @everywhere using DistributedArrays
 
@@ -36,44 +36,27 @@ arr.cuts # data division:
 # 2-element Array{Array{Int64,1},1}:
 #  [1,101]
 #  [1,26,51,76,101]
-# arr.chunks # references on the workers:
-# 1x4 Array{RemoteRef,2}:
-#  RemoteRef(2,1,11164)  RemoteRef(3,1,11165)  …  RemoteRef(5,1,11167)
-
-# ERROR: LoadError: malformed @parallel loop
-# da = @parallel [2i for i = 1:10]
-# 10-element DArray{Int64,1,Array{Int64,1}}:
-#   2
-#   4
-#   6
-#   8
-#  10
-#  12
-#  14
-#  16
-#  18
-#  20
 
 DArray((10,10)) do I
     println(I)
     return zeros(length(I[1]),length(I[2]))
 end
-#         From worker 2:  (1:5,1:3)
-#         From worker 8:  (1:5,9:10)
-#         From worker 4:  (1:5,4:5)
-#         From worker 3:  (6:10,1:3)
-#         From worker 5:  (6:10,4:5)
-#         From worker 7:  (6:10,6:8)
-#         From worker 6:  (1:5,6:8)
-#         From worker 9:  (6:10,9:10)
-# 10x10 DArray{Float64,2,Array{Float64,2}}:
-#  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
-#  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
-#  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
-#  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
-#  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
-#  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
-#  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
-#  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
-#  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
-#  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+# From worker 3:  (6:10,1:3)
+# From worker 2:  (1:5,1:3)
+# From worker 4:  (1:5,4:5)
+# From worker 5:  (6:10,4:5)
+# From worker 7:  (6:10,6:7)
+# From worker 8:  (1:5,8:10)
+# From worker 9:  (6:10,8:10)
+# From worker 6:  (1:5,6:7)
+# 10×10 DistributedArrays.DArray{Float64,2,Array{Float64,2}}:
+# 0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+# 0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+# 0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+# 0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+# 0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+# 0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+# 0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+# 0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+# 0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+# 0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0

@@ -42,9 +42,3 @@ write(file, "$a $b")
 Pkg.add("Lint")
 using Lint
 lintfile("performance.jl")
-# 
-# typechecker:
-Pkg.add("TypeCheck")
-using TypeCheck
-foo1(x::Int) = isprime(x) ? x: false
-checkreturntypes(foo1) #> foo1(Int64)::Union(Bool,Int64)

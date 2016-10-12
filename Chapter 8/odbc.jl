@@ -1,5 +1,4 @@
 Pkg.add("ODBC")
-Pkg.add("Dates")
 using ODBC
 ODBC.connect("pubsODBC")
 	# ODBC Connection Object
@@ -50,6 +49,3 @@ results = query("select * from titles")
 # updates:
 updsql = "update titles set type = 'psychology' where title_id='BU1032'"
 query(updsql)
-
-listdrivers()
-listdsns()

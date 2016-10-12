@@ -1,4 +1,4 @@
-pwd() 
+pwd()
 # cd("d:\\test\\week1")
 # shell mode:
 # ; ls
@@ -23,14 +23,11 @@ println("")
 # https://groups.google.com/forum/#!topic/julia-users/hzBeluKU7P0
 # run(cmd) #> returns: file1.txt  shell.jl  test.txt
 # pipelining:
-# v0.3: deprecated: run(`cat $file` |> "test.txt") #> text from file1.txt is written into test.txt
 run(pipeline(`cat $file`, "test.txt")) #> text from file1.txt is written into test.txt
 # deprecated: run("test.txt" |> `cat`)
 run(pipeline("test.txt", `cat`))
 println("")
-# run(`echo $("\nhi\nJulia")` |> `cat` |> `grep -n J`) #> 3:Julia
 run(pipeline(`echo $("\nhi\nJulia")`,`cat`,`grep -n J`))
-# run(`cat "tosort.txt"` |> `sort`) # returns A B C
 run(pipeline(`cat "tosort.txt"`, `sort`))
 
 println()
@@ -69,5 +66,6 @@ run(`cat "file1.txt"` & `cat "tosort.txt"`)
 # platform variations:
 fun1 = ()
 fun2 = ()
-@windows ? fun1 : fun2
+is_windows() ? fun1 : fun2
+# @static is_windows() ? fun1 : fun2
 println("")

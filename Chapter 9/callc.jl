@@ -1,9 +1,10 @@
-# calling a function in a shared library:
-lang = ccall( (:getenv, "libc"),Ptr{Uint8}, (Ptr{Uint8},), "LANGUAGE")
 # ok on Linux
-# on Windows: ERROR: error compiling anonymous: could not load module libc: 
+# not ok on Windows: ERROR: error compiling anonymous: could not load module libc: 
 # The specified module could not be found.
-bytestring(lang) #> "en_US"
+
+# calling a function in a shared library:
+lang = ccall( (:getenv, "libc"),Ptr{UInt8}, (Ptr{UInt8},), "LANGUAGE")
+unsafe_string(lang) #> "en_US"
 
 # test existence of library:
 Libdl.find_library(["libc"]) #> "libc"

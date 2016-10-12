@@ -153,7 +153,11 @@ show(by(data, :quality, data -> size(data, 1)))
 # | 4   | 6       | 638 |
 # | 5   | 7       | 199 |
 # | 6   | 8       | 18  |
-_, count = hist(data[:quality])
+using StatsBase
+hist = fit(Histogram, (data[:quality]))
+# hist is a StatsBase.Histogram
+hist.weights
+count = filter(x -> x != 0, hist.weights)
 #>  count 6-element Array{Int64,1}:  10 53 681 638 199 18
 class = sort(unique(data[:quality]))
 #> 6-element DataArray{Int64,1}: 3 4 5 6 7 8

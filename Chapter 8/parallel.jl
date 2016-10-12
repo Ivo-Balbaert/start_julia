@@ -27,28 +27,30 @@ nprocs() # 14
 rmprocs(3) # worker with id 3 is removed
 
 # cluster of computers:
-# julia --machinefile machines driver.jl 
+# julia --machinefile machines driver.jl
 # Run processes specified in driver.jl on hosts listed in machines
 
 # primitive operations with processes:
-r1 = remotecall(2, x -> x^2, 1000) #> RemoteRef(2,1,20)
+r1 = remotecall(x -> x^2, 2, 1000) #> Future(2,1,11,Nullable{Any}())
 fetch(r1) #> 1000000
 
-remotecall_fetch(5, sin, 2pi) # -2.4492935982947064e-16
+remotecall_fetch(sin, 5, 2pi) # -2.4492935982947064e-16
 
 r2 = @spawnat 4 sqrt(2) # lets worker 4 calculate sqrt(2)
 fetch(r2)  #> 1.4142135623730951
 r = [@spawnat w sqrt(5) for w in workers()]
 # or in a freshly started REPL:
 # r = [@spawnat i sqrt(5) for i=1:length(workers())]
-# 6-element Array{Any,1}:
-#  RemoteRef(1,1,8)
-#  RemoteRef(2,1,9)
-#  RemoteRef(3,1,10)
-#  RemoteRef(4,1,11)
-#  RemoteRef(5,1,12)
-#  RemoteRef(6,1,13)
-r3 = @spawn sqrt(5) #> RemoteRef(5,1,26)
+# 8-element Array{Future,1}:
+#  Future(2,1,24,#NULL)
+#  Future(3,1,25,#NULL)
+#  Future(4,1,26,#NULL)
+#  Future(5,1,27,#NULL)
+#  Future(6,1,28,#NULL)
+#  Future(7,1,29,#NULL)
+#  Future(8,1,30,#NULL)
+#  Future(9,1,31,#NULL)
+r3 = @spawn sqrt(5) #> Future(2,1,32,Nullable{Any}())
 fetch(r3) #> 2.23606797749979
 
 # using @everywhere to make functions available to all workers:
@@ -75,12 +77,5 @@ include("functions.jl")
 # broadcast data to all workers:
 d = "Julia"
 for pid in workers()
-   remotecall(pid, x -> (global d; d = x; nothing), d)
+   remotecall(x -> (global d; d = x; nothing), pid, d)
 end
-#= Output:
-1   From worker 2:  2
-
-    From worker 4:  4
-    From worker 5:  5
-    From worker 6:  6
-=#

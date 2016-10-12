@@ -9,11 +9,11 @@
      stroke-width="0.3"
      font-size="3.88"
 >
-<g class="plotroot xscalable yscalable" id="fig-1a87b17be96841658acaeebc8e3caf82-element-1">
-  <g font-size="3.88" font-family="'PT Sans','Helvetica Neue','Helvetica',sans-serif" fill="#564A55" stroke="#000000" stroke-opacity="0.000" id="fig-1a87b17be96841658acaeebc8e3caf82-element-2">
+<g class="plotroot xscalable yscalable" id="img-9ff9ac53-1">
+  <g font-size="3.88" font-family="'PT Sans','Helvetica Neue','Helvetica',sans-serif" fill="#564A55" stroke="#000000" stroke-opacity="0.000" id="img-9ff9ac53-2">
     <text x="83.52" y="64.59" text-anchor="middle" dy="0.6em">x</text>
   </g>
-  <g class="guide xlabels" font-size="2.82" font-family="'PT Sans Caption','Helvetica Neue','Helvetica',sans-serif" fill="#6C606B" id="fig-1a87b17be96841658acaeebc8e3caf82-element-3">
+  <g class="guide xlabels" font-size="2.82" font-family="'PT Sans Caption','Helvetica Neue','Helvetica',sans-serif" fill="#6C606B" id="img-9ff9ac53-3">
     <text x="21.63" y="57.91" text-anchor="middle" dy="0.6em">0</text>
     <text x="46.39" y="57.91" text-anchor="middle" dy="0.6em">5</text>
     <text x="71.14" y="57.91" text-anchor="middle" dy="0.6em">10</text>
@@ -21,18 +21,19 @@
     <text x="120.65" y="57.91" text-anchor="middle" dy="0.6em">20</text>
     <text x="145.4" y="57.91" text-anchor="middle" dy="0.6em">25</text>
   </g>
-  <g clip-path="url(#fig-1a87b17be96841658acaeebc8e3caf82-element-5)" id="fig-1a87b17be96841658acaeebc8e3caf82-element-4">
-    <g pointer-events="visible" opacity="1" fill="#000000" fill-opacity="0.000" stroke="#000000" stroke-opacity="0.000" class="guide background" id="fig-1a87b17be96841658acaeebc8e3caf82-element-6">
+<g clip-path="url(#img-9ff9ac53-4)">
+  <g id="img-9ff9ac53-5">
+    <g pointer-events="visible" opacity="1" fill="#000000" fill-opacity="0.000" stroke="#000000" stroke-opacity="0.000" class="guide background" id="img-9ff9ac53-6">
       <rect x="19.63" y="5" width="127.77" height="51.91"/>
     </g>
-    <g class="guide ygridlines xfixed" stroke-dasharray="0.5,0.5" stroke-width="0.2" stroke="#D0D0E0" id="fig-1a87b17be96841658acaeebc8e3caf82-element-7">
+    <g class="guide ygridlines xfixed" stroke-dasharray="0.5,0.5" stroke-width="0.2" stroke="#D0D0E0" id="img-9ff9ac53-7">
       <path fill="none" d="M19.63,54.91 L 147.4 54.91"/>
       <path fill="none" d="M19.63,42.94 L 147.4 42.94"/>
       <path fill="none" d="M19.63,30.96 L 147.4 30.96"/>
       <path fill="none" d="M19.63,18.98 L 147.4 18.98"/>
       <path fill="none" d="M19.63,7 L 147.4 7"/>
     </g>
-    <g class="guide xgridlines yfixed" stroke-dasharray="0.5,0.5" stroke-width="0.2" stroke="#D0D0E0" id="fig-1a87b17be96841658acaeebc8e3caf82-element-8">
+    <g class="guide xgridlines yfixed" stroke-dasharray="0.5,0.5" stroke-width="0.2" stroke="#D0D0E0" id="img-9ff9ac53-8">
       <path fill="none" d="M21.63,5 L 21.63 56.91"/>
       <path fill="none" d="M46.39,5 L 46.39 56.91"/>
       <path fill="none" d="M71.14,5 L 71.14 56.91"/>
@@ -40,26 +41,27 @@
       <path fill="none" d="M120.65,5 L 120.65 56.91"/>
       <path fill="none" d="M145.4,5 L 145.4 56.91"/>
     </g>
-    <g class="plotpanel" id="fig-1a87b17be96841658acaeebc8e3caf82-element-9">
-      <g stroke-width="0.3" fill="#000000" fill-opacity="0.000" class="geometry" stroke="#00BFFF" id="fig-1a87b17be96841658acaeebc8e3caf82-element-10">
+    <g class="plotpanel" id="img-9ff9ac53-9">
+      <g stroke-width="0.3" fill="#000000" fill-opacity="0.000" class="geometry" stroke-dasharray="none" stroke="#00BFFF" id="img-9ff9ac53-10">
         <path fill="none" d="M21.63,54.91 L 22.13 54.91 22.63 54.91 23.12 54.91 23.62 54.91 24.12 54.9 24.61 54.89 25.11 54.89 25.61 54.88 26.11 54.87 26.6 54.85 27.1 54.84 27.6 54.83 28.09 54.81 28.59 54.8 29.09 54.78 29.58 54.76 30.08 54.74 30.58 54.72 31.08 54.7 31.57 54.67 32.07 54.65 32.57 54.62 33.06 54.6 33.56 54.57 34.06 54.54 34.56 54.51 35.05 54.47 35.55 54.44 36.05 54.41 36.54 54.37 37.04 54.33 37.54 54.3 38.03 54.26 38.53 54.22 39.03 54.18 39.53 54.13 40.02 54.09 40.52 54.04 41.02 54 41.51 53.95 42.01 53.9 42.51 53.85 43.01 53.8 43.5 53.75 44 53.69 44.5 53.64 44.99 53.58 45.49 53.52 45.99 53.47 46.48 53.41 46.98 53.34 47.48 53.28 47.98 53.22 48.47 53.15 48.97 53.09 49.47 53.02 49.96 52.95 50.46 52.88 50.96 52.81 51.46 52.74 51.95 52.67 52.45 52.59 52.95 52.52 53.44 52.44 53.94 52.36 54.44 52.29 54.93 52.2 55.43 52.12 55.93 52.04 56.43 51.96 56.92 51.87 57.42 51.79 57.92 51.7 58.41 51.61 58.91 51.52 59.41 51.43 59.91 51.34 60.4 51.24 60.9 51.15 61.4 51.05 61.89 50.95 62.39 50.86 62.89 50.76 63.38 50.65 63.88 50.55 64.38 50.45 64.88 50.35 65.37 50.24 65.87 50.13 66.37 50.02 66.86 49.92 67.36 49.8 67.86 49.69 68.36 49.58 68.85 49.47 69.35 49.35 69.85 49.23 70.34 49.12 70.84 49 71.34 48.88 71.83 48.76 72.33 48.63 72.83 48.51 73.33 48.38 73.82 48.26 74.32 48.13 74.82 48 75.31 47.87 75.81 47.74 76.31 47.61 76.81 47.48 77.3 47.34 77.8 47.21 78.3 47.07 78.79 46.93 79.29 46.79 79.79 46.65 80.28 46.51 80.78 46.37 81.28 46.22 81.78 46.08 82.27 45.93 82.77 45.78 83.27 45.63 83.76 45.48 84.26 45.33 84.76 45.18 85.26 45.02 85.75 44.87 86.25 44.71 86.75 44.55 87.24 44.4 87.74 44.24 88.24 44.07 88.73 43.91 89.23 43.75 89.73 43.58 90.23 43.42 90.72 43.25 91.22 43.08 91.72 42.91 92.21 42.74 92.71 42.57 93.21 42.4 93.71 42.22 94.2 42.05 94.7 41.87 95.2 41.69 95.69 41.51 96.19 41.33 96.69 41.15 97.19 40.97 97.68 40.78 98.18 40.6 98.68 40.41 99.17 40.22 99.67 40.03 100.17 39.84 100.66 39.65 101.16 39.46 101.66 39.26 102.16 39.07 102.65 38.87 103.15 38.68 103.65 38.48 104.14 38.28 104.64 38.08 105.14 37.87 105.64 37.67 106.13 37.47 106.63 37.26 107.13 37.05 107.62 36.85 108.12 36.64 108.62 36.42 109.11 36.21 109.61 36 110.11 35.79 110.61 35.57 111.1 35.35 111.6 35.14 112.1 34.92 112.59 34.7 113.09 34.47 113.59 34.25 114.09 34.03 114.58 33.8 115.08 33.58 115.58 33.35 116.07 33.12 116.57 32.89 117.07 32.66 117.56 32.43 118.06 32.19 118.56 31.96 119.06 31.72 119.55 31.48 120.05 31.25 120.55 31.01 121.04 30.76 121.54 30.52 122.04 30.28 122.54 30.03 123.03 29.79 123.53 29.54 124.03 29.29 124.52 29.04 125.02 28.79 125.52 28.54 126.01 28.29 126.51 28.04 127.01 27.78 127.51 27.52 128 27.27 128.5 27.01 129 26.75 129.49 26.48 129.99 26.22 130.49 25.96 130.99 25.69 131.48 25.43 131.98 25.16 132.48 24.89 132.97 24.62 133.47 24.35 133.97 24.08 134.46 23.8 134.96 23.53 135.46 23.25 135.96 22.98 136.45 22.7 136.95 22.42 137.45 22.14 137.94 21.86 138.44 21.57 138.94 21.29 139.44 21 139.93 20.72 140.43 20.43 140.93 20.14 141.42 19.85 141.92 19.56 142.42 19.26 142.91 18.97 143.41 18.67 143.91 18.38 144.41 18.08 144.9 17.78 145.4 17.48"/>
       </g>
     </g>
   </g>
-  <g class="guide ylabels" font-size="2.82" font-family="'PT Sans Caption','Helvetica Neue','Helvetica',sans-serif" fill="#6C606B" id="fig-1a87b17be96841658acaeebc8e3caf82-element-11">
+</g>
+  <g class="guide ylabels" font-size="2.82" font-family="'PT Sans Caption','Helvetica Neue','Helvetica',sans-serif" fill="#6C606B" id="img-9ff9ac53-11">
     <text x="18.63" y="54.91" text-anchor="end" dy="0.35em">0</text>
     <text x="18.63" y="42.94" text-anchor="end" dy="0.35em">200</text>
     <text x="18.63" y="30.96" text-anchor="end" dy="0.35em">400</text>
     <text x="18.63" y="18.98" text-anchor="end" dy="0.35em">600</text>
     <text x="18.63" y="7" text-anchor="end" dy="0.35em">800</text>
   </g>
-  <g font-size="3.88" font-family="'PT Sans','Helvetica Neue','Helvetica',sans-serif" fill="#564A55" stroke="#000000" stroke-opacity="0.000" id="fig-1a87b17be96841658acaeebc8e3caf82-element-12">
+  <g font-size="3.88" font-family="'PT Sans','Helvetica Neue','Helvetica',sans-serif" fill="#564A55" stroke="#000000" stroke-opacity="0.000" id="img-9ff9ac53-12">
     <text x="8.81" y="28.96" text-anchor="middle" dy="0.35em" transform="rotate(-90, 8.81, 30.96)">f(x)</text>
   </g>
 </g>
 <defs>
-<clipPath id="fig-1a87b17be96841658acaeebc8e3caf82-element-5">
+  <clipPath id="img-9ff9ac53-4">
   <path d="M19.63,5 L 147.4 5 147.4 56.91 19.63 56.91" />
-</clipPath
-></defs>
+</clipPath>
+</defs>
 </svg>
