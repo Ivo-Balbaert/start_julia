@@ -74,7 +74,7 @@ println()
 show(eqa) #> linspace(0.0,10.0,5) - [0.0,2.5,5.0,7.5,10.0]
 fill!(arr, 42) #> [42,42,42]
 println()
-println(cell(4)) #> Any[#undef,#undef,#undef,#undef]
+println(Array{Any}(undef, 4)) #> Any[#undef,#undef,#undef,#undef]
 
 v1 = rand(Int32, 5)
 println(v1) #> Int32[1735276173,972339632,1303377282,1493859467,-788555652]
